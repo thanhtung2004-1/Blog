@@ -16,7 +16,6 @@ export default function Home() {
             try {
                 let res;
                 if (currentUser) {
-                    // Public + Private của mình
                     res = await api.get(`/posts`);
                     setPosts(
                         res.data.filter(
@@ -25,7 +24,6 @@ export default function Home() {
                         )
                     );
                 } else {
-                    // Chỉ public
                     res = await api.get(`/posts?visibility=public`);
                     setPosts(res.data);
                 }

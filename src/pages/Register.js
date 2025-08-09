@@ -12,7 +12,6 @@ export default function Register() {
     const onFinish = async (values) => {
         try {
             setLoading(true);
-            // Kiểm tra username đã tồn tại chưa
             const res = await api.get(`/users?username=${values.username}`);
             if (res.data.length > 0) {
                 message.error("Tên đăng nhập đã tồn tại");

@@ -14,11 +14,9 @@ export default function Profile() {
 
     useEffect(() => {
         if (!currentUser) {
-            // Nếu chưa login chuyển về login
             navigate("/login");
             return;
         }
-        // điền form với dữ liệu hiện tại
         form.setFieldsValue({
             fullname: currentUser.fullname || "",
             password: currentUser.password || "",
@@ -29,21 +27,17 @@ export default function Profile() {
         if (!currentUser) return;
         try {
             setLoading(true);
-            // Giữ các trường khác (username, id, ...)
             const updatedUser = {
                 ...currentUser,
                 fullname: values.fullname,
-                // Nếu để trống password (nếu bạn cho phép) thì giữ password cũ
                 password: values.password || currentUser.password,
             };
 
             await api.put(`/users/${currentUser.id}`, updatedUser);
 
-            // Cập nhật context + localStorage (dùng login để set và lưu)
             if (typeof login === "function") {
                 login(updatedUser);
             } else {
-                // Nếu AuthContext không có login, fallback lưu trực tiếp
                 localStorage.setItem("currentUser", JSON.stringify(updatedUser));
             }
 
@@ -56,8 +50,6 @@ export default function Profile() {
             setLoading(false);
         }
     };
-
-    // Nếu chưa login, sẽ redirect trong useEffect, ở đây chỉ hiển thị null tạm thời
     if (!currentUser) return null;
 
     return (

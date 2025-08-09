@@ -30,7 +30,6 @@ export default function Navbar() {
     return (
         <Header style={{ background: "#fff", padding: "0 20px", boxShadow: "0 2px 8px #f0f1f2" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                {/* Left Menu */}
                 <Menu mode="horizontal" selectedKeys={[]} style={{ flex: 1, borderBottom: "none" }}>
                     <Menu.Item key="home">
                         <Link to="/">🏠 Trang chủ</Link>
@@ -41,8 +40,6 @@ export default function Navbar() {
                         </Menu.Item>
                     )}
                 </Menu>
-
-                {/* Right Area */}
                 {currentUser ? (
                     <Dropdown menu={userMenu} placement="bottomRight">
                         <div style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
