@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123456",
+      "fullname": "Admin User"
+    },
+    {
+      "id": "5dce",
+      "username": "Tung",
+      "password": "123456",
+      "fullname": "Thanh Tùng"
+    },
+    {
+      "id": "bb2d",
+      "username": "Kim Lộc",
+      "password": "1234567",
+      "fullname": "Trà Kim Lộc"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Bài viết public mẫu",
+      "content": "<p>Nội dung bài viết mẫu</p>",
+      "authorId": "1",
+      "authorName": "Admin User",
+      "visibility": "public"
+    },
+    {
+      "id": "602a",
+      "title": "Ăn Khế",
+      "content": "<p>may túi ba gang</p>",
+      "authorId": "5dce",
+      "authorName": "Thanh Tùng",
+      "visibility": "private"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": "1",
+      "userId": "5dce",
+      "userName": "Thanh Tùng",
+      "content": "hay",
+      "createdAt": "2025-08-09T12:00:00.000Z"
+    },
+    {
+      "id": "ca5a",
+      "postId": null,
+      "userId": "5dce",
+      "userName": "Thanh Tùng",
+      "content": "Hay",
+      "createdAt": "2025-08-09T08:46:58.109Z"
+    }
+  ]
+}
